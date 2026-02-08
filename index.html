@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose your surprise plan for Valentine’s Day</title>
+
+    <style>
+        /* Page background */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            margin: 0;
+
+            background-image: url("background.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* White content card */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            border: none;
+            background-color: #f06292;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: #ec407a;
+        }
+
+        /* Plans are hidden by default */
+        .plan {
+            display: none;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Choose your surprise plan for Valentine’s Day</h1>
+
+    <div class="btn-group">
+        <button onclick="showPlan('p1')">Plan 1</button>
+        <button onclick="showPlan('p2')">Plan 2</button>
+        <button onclick="showPlan('p3')">Plan 3</button>
+        <button onclick="showPlan('p4')">Plan 4</button>
+    </div>
+
+    <div id="p1" class="plan">
+        <h2>Plan 1</h2>
+        <p>
+            This plan is all about speed!! Competing to see who is the real Saetta McQueen of the couple.
+        </p>
+        <p>
+            We head to BattleKart Tour &amp; Taxis, where go-karting meets video-games (apparently – so the website says).
+            Perfect for the little child in your adult sized body.
+        </p>
+    </div>
+
+    <div id="p2" class="plan">
+        <h2>Plan 2</h2>
+        <p>
+            The weather app says it’s going to rain… so I found us the perfect excuse to stay warm and to exercise our competitive muscles.
+            We start with indoor mini-golf at Koezio.
+        </p>
+        <p>
+            And since we’re already there… why stop at one activity? We can add the Elite Agents Mission,
+            the kind of experience that’s kinda stupid, but very energetic (it has very good reviews of Tripadvisor too).
+            Or we can also just minigolf haha.
+        </p>
+    </div>
+
+    <div id="p3" class="plan">
+        <h2>Plan 3</h2>
+        <p>
+            This plan is a little time machine to reconnect to a younger version of yourself.
+            We are going to Autoworld!
+        </p>
+        <p>
+            It will be perfect: you loved it as a kid and I have a dad who loves cars and also daddy issues!
+        </p>
+    </div>
+
+    <div id="p4" class="plan">
+        <h2>Plan 4</h2>
+        <p>
+            If one of the shows speaks to you, we let the universe do the rest.
+            At the Planetarium of the Royal Observatory of Belgium,
+            we can lay under a giant dome and observe the stars (or whatever they have in their program).
+        </p>
+        <p>
+            Perfect because you will get some rest from me talking!
+            Also, very Ross and Rachel coded…
+        </p>
+    </div>
+
+</div>
+
+<script>
+    function showPlan(planId) {
+        document.querySelectorAll('.plan').forEach(plan => {
+            plan.style.display = 'none';
+        });
+
+        const selectedPlan = document.getElementById(planId);
+        selectedPlan.style.display = 'block';
+        selectedPlan.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
